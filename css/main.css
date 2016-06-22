@@ -51,6 +51,16 @@ html {
 *, *:before, *:after {
   box-sizing: inherit; }
 
+body {
+  padding-top: 50px; }
+
+.container {
+  border: 1px solid black;
+  margin: 0 auto;
+  text-align: center;
+  height: 800px;
+  width: 800px; }
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
