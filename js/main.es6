@@ -71,3 +71,21 @@ function changeDir() {
     e.preventDefault(); // prevent the default action (scroll / move caret)
   });
 }
+
+function move(direction, position) {
+
+}
+
+function moveLeft(x, y) {}
+
+function moveRight(x,y) {}
+
+function moveUp(x,y) {}
+
+function moveDown(x,y) {}
+
+function loop() {
+  setTimeout(function() {
+    move(snake.direction, snake.position);
+  }, 300);
+}
