@@ -85,6 +85,12 @@ function move(direction, position) {
 
   if (direction === 'r') {
     moveRight(x, y, position);
+  } else if (direction === 'l') {
+    moveLeft(x, y, position);
+  } else if (direction === 'u') {
+    moveUp(x, y, position);
+  } else {
+    moveDown(x, y, position);
   }
 }
 
@@ -93,6 +99,27 @@ function moveRight(x, y, pos) {
   x += 1;
   $('.row:nth-child(' + y + ') .box:nth-child(' + x + ')').html('O');
   pos[1] = pos[1] + 1;
+}
+
+function moveLeft(x, y, pos) {
+  $('.row:nth-child(' + y + ') .box:nth-child(' + x + ')').html(' ');
+  x -= 1;
+  $('.row:nth-child(' + y + ') .box:nth-child(' + x + ')').html('O');
+  pos[1] = pos[1] - 1;
+}
+
+function moveUp(x, y, pos) {
+  $('.row:nth-child(' + y + ') .box:nth-child(' + x + ')').html(' ');
+  y -= 1;
+  $('.row:nth-child(' + y + ') .box:nth-child(' + x + ')').html('O');
+  pos[0] = pos[0] - 1;
+}
+
+function moveDown(x, y, pos) {
+  $('.row:nth-child(' + y + ') .box:nth-child(' + x + ')').html(' ');
+  y += 1;
+  $('.row:nth-child(' + y + ') .box:nth-child(' + x + ')').html('O');
+  pos[0] = pos[0] + 1;
 }
 
 function loop() {
