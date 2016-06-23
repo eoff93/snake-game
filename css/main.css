@@ -70,6 +70,7 @@ body {
 .box {
   border: 1px solid black;
   display: inline-block;
+  vertical-align: top;
   height: 24px;
   width: 24px; }
 

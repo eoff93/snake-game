@@ -6,6 +6,7 @@ const grid = [];
 
 fillGrid(rows, cols, grid);
 $('.grid').html(render(grid));
+$('.row:nth-child(11) .box:nth-child(11)').html('O');
 
 // fills the grid with space strings
 function fillGrid(height, width, gridArr) {
