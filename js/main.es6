@@ -50,22 +50,18 @@ function changeDir() {
     switch (e.which) {
       case 37: // left
         snake.direction = 'l';
-        console.log(snake.direction);
         break;
 
       case 38: // up
         snake.direction = 'u';
-        console.log(snake.direction);
         break;
 
       case 39: // right
         snake.direction = 'r';
-        console.log(snake.direction);
         break;
 
       case 40: // down
         snake.direction = 'd';
-        console.log(snake.direction);
         break;
 
       default: return; // exit this handler for other keys
