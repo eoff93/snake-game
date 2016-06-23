@@ -8,6 +8,8 @@ fillGrid(rows, cols, grid);
 $('.grid').html(render(grid));
 $('.row:nth-child(11) .box:nth-child(11)').html('O');
 
+changeDir();
+
 const snake = {
   position: [11, 11],
   direction: 'r',
@@ -38,4 +40,34 @@ function render(gridArr) {
     html += '</section>';
   }
   return html;
+}
+
+// listen for keypress and change direction
+function changeDir() {
+  $(document).keydown(function(e) {
+    switch (e.which) {
+      case 37: // left
+        snake.direction = 'l';
+        console.log(snake.direction);
+        break;
+
+      case 38: // up
+        snake.direction = 'u';
+        console.log(snake.direction);
+        break;
+
+      case 39: // right
+        snake.direction = 'r';
+        console.log(snake.direction);
+        break;
+
+      case 40: // down
+        snake.direction = 'd';
+        console.log(snake.direction);
+        break;
+
+      default: return; // exit this handler for other keys
+    }
+    e.preventDefault(); // prevent the default action (scroll / move caret)
+  });
 }
