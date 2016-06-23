@@ -77,18 +77,21 @@ function changeDir() {
   });
 }
 
-function move(direction, position) {}
+loop();
 
-function moveLeft(x, y) {}
+function move(direction, position) {
+  var x = position[1];
+  var y = position[0];
 
-function moveRight(x, y) {}
-
-function moveUp(x, y) {}
-
-function moveDown(x, y) {}
+  $('.row:nth-child(' + y + ') .box:nth-child(' + x + ')').html(' ');
+  x += 1;
+  $('.row:nth-child(' + y + ') .box:nth-child(' + x + ')').html('O');
+  position[1] = position[1] + 1;
+}
 
 function loop() {
   setTimeout(function () {
     move(snake.direction, snake.position);
+    setTimeout(loop(), 300);
   }, 300);
 }

@@ -72,20 +72,22 @@ function changeDir() {
   });
 }
 
+loop();
+
 function move(direction, position) {
+  let x = position[1];
+  let y = position[0];
+
+  $(`.row:nth-child(${y}) .box:nth-child(${x})`).html(' ');
+  x += 1;
+  $(`.row:nth-child(${y}) .box:nth-child(${x})`).html('O');
+  position[1] = position[1] + 1;
 
 }
-
-function moveLeft(x, y) {}
-
-function moveRight(x,y) {}
-
-function moveUp(x,y) {}
-
-function moveDown(x,y) {}
 
 function loop() {
   setTimeout(function() {
     move(snake.direction, snake.position);
+    setTimeout(loop(), 300);
   }, 300);
 }
