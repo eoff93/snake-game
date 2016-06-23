@@ -75,14 +75,19 @@ function changeDir() {
 loop();
 
 function move(direction, position) {
-  let x = position[1];
-  let y = position[0];
+  const x = position[1];
+  const y = position[0];
 
+  if (direction === 'r') {
+    moveRight(x, y, position);
+  }
+}
+
+function moveRight(x, y, pos) {
   $(`.row:nth-child(${y}) .box:nth-child(${x})`).html(' ');
   x += 1;
   $(`.row:nth-child(${y}) .box:nth-child(${x})`).html('O');
-  position[1] = position[1] + 1;
-
+  pos[1] = pos[1] + 1;
 }
 
 function loop() {
