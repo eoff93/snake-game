@@ -79,6 +79,11 @@ function move(direction, position) {
   const x = position[1];
   const y = position[0];
 
+  if (checkLoss(x,y)) {
+    position[0] = 11;
+    position[1] = 11;
+  }
+
   switch (direction) {
     case 'r':
       moveRight(x, y, position);
@@ -130,4 +135,11 @@ function loop() {
     move(snake.direction, snake.position);
     setTimeout(loop(), 300);
   }, 300);
+}
+
+function checkLoss(x, y) {
+  return !(x >= 0 &&
+         x <= 22 &&
+         y >= 0 &&
+         y <= 22);
 }
