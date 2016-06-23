@@ -83,14 +83,21 @@ function move(direction, position) {
   var x = position[1];
   var y = position[0];
 
-  if (direction === 'r') {
-    moveRight(x, y, position);
-  } else if (direction === 'l') {
-    moveLeft(x, y, position);
-  } else if (direction === 'u') {
-    moveUp(x, y, position);
-  } else {
-    moveDown(x, y, position);
+  switch (direction) {
+    case 'r':
+      moveRight(x, y, position);
+      break;
+    case 'l':
+      moveLeft(x, y, position);
+      break;
+    case 'u':
+      moveUp(x, y, position);
+      break;
+    case 'd':
+      moveDown(x, y, position);
+      break;
+    default:
+      break;
   }
 }
 
