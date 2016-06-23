@@ -58,8 +58,20 @@ body {
   border: 1px solid black;
   margin: 0 auto;
   text-align: center;
-  height: 800px;
   width: 800px; }
+
+.row {
+  height: 24px; }
+
+.grid {
+  margin: 0 auto;
+  width: 528px; }
+
+.box {
+  border: 1px solid black;
+  display: inline-block;
+  height: 24px;
+  width: 24px; }
 
 /* ==========================================================================
    Media Queries
