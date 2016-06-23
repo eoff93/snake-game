@@ -1,15 +1,9 @@
 'use strict';
 
+// starting variables
 var rows = 22;
 var cols = 22;
-
 var grid = [];
-
-fillGrid(rows, cols, grid);
-$('.grid').html(render(grid));
-$('.row:nth-child(11) .box:nth-child(11)').html('O');
-
-changeDir();
 
 var snake = {
   position: [11, 11],
@@ -17,6 +11,15 @@ var snake = {
 
   current: [[11, 11]]
 };
+
+// set up beginning state
+fillGrid(rows, cols, grid);
+$('.grid').html(render(grid));
+$('.row:nth-child(11) .box:nth-child(11)').html('O');
+
+// change direction and move the snake
+changeDir();
+loop();
 
 // fills the grid with space strings
 function fillGrid(height, width, gridArr) {
@@ -77,8 +80,7 @@ function changeDir() {
   });
 }
 
-loop();
-
+// check which direction and then turn the snake to go that way
 function move(direction, position) {
   var x = position[1];
   var y = position[0];
