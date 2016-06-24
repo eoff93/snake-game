@@ -13,7 +13,6 @@ const snake = {
 // set up beginning state
 fillGrid(rows, cols, grid);
 $('.grid').html(render(grid));
-$('.row:nth-child(11) .box:nth-child(11)').html('O');
 
 // change direction and move the snake
 changeDir();
